@@ -32,6 +32,7 @@ spec:
         kubernetes.io/cluster-service: 'true'
         name: influxGrafana
     spec:
+      hostNetwork: true
       containers:
       - name: influxdb
         image: kubernetes/heapster_influxdb:v0.6

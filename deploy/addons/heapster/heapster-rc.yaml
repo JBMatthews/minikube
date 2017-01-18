@@ -19,6 +19,7 @@ spec:
         kubernetes.io/cluster-service: 'true'
         k8s-app: heapster
     spec:
+      hostNetwork: true
       containers:
       - name: heapster
         image: gcr.io/google_containers/heapster:v1.3.0
@@ -26,7 +27,7 @@ spec:
         command:
         - /heapster
         - --source=kubernetes
-        - --sink=influxdb:http://monitoring-influxdb:8086
+        - --sink=influxdb:http://localhost:8086
         - --metric_resolution=60s
         volumeMounts:
         - name: ssl-certs
