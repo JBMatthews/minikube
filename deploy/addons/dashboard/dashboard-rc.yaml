@@ -38,7 +38,8 @@ spec:
       hostNetwork: true
       containers:
       - name: kubernetes-dashboard
-        image: gcr.io/google_containers/kubernetes-dashboard-amd64:v1.5.1
+        # ARCH will be replaced with the architecture it's built for. Check out the Makefile for more details
+        image: gcr.io/google_containers/kubernetes-dashboard-amd64:v1.4.0
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 9090
