@@ -44,6 +44,8 @@ spec:
         ports:
         - containerPort: 9090
           protocol: TCP
+        args:
+        - --apiserver-host=http://localhost:8080
         livenessProbe:
           httpGet:
             path: /
